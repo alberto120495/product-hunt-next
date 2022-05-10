@@ -1,12 +1,16 @@
 import Link from "next/link";
 import styled from "styled-components";
+import AuthContext from "../../context/AuthProvider";
+import { useContext } from "react";
 
 function Navegacion() {
+  const { user } = useContext(AuthContext);
+
   return (
     <Nav>
       <Link href="/">Inicio</Link>
       <Link href="/populares">Populares</Link>
-      <Link href="/nuevo-producto">Nuevo Producto</Link>
+      {user && <Link href="/nuevo-producto">Nuevo Producto</Link>}
     </Nav>
   );
 }

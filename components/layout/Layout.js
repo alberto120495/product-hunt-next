@@ -5,7 +5,6 @@ function Layout({ children, pagina }) {
   return (
     <>
       <Head>
-        <html lang="es" />
         <title>Hunt - {pagina}</title>
         <meta name="description" content="Sitio Web de Product Hunt" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossoorigin />

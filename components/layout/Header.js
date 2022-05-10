@@ -3,8 +3,16 @@ import Navegacion from "./Navegacion";
 import Link from "next/link";
 import styled from "styled-components";
 import Boton from "../ui/Boton";
+import { useContext } from "react";
+import AuthContext from "../../context/AuthProvider";
+import { auth } from "../../firebase/config";
+import { signOut } from "firebase/auth";
 function Header() {
-  const user = false;
+  const { user } = useContext(AuthContext);
+
+  const cerrarSesion = async () => {
+    await signOut(auth);
+  };
   return (
     <header>
       <ContenedorHeader>
@@ -19,8 +27,10 @@ function Header() {
         <div className="botones-container">
           {user ? (
             <>
-              <p className="parrafo">Hola: Alberto</p>
-              <Boton bgColor={true}>Cerrar Sesion</Boton>
+              <p className="parrafo">Hola: {user.displayName}</p>
+              <Boton bgColor={true} onClick={cerrarSesion}>
+                Cerrar Sesion
+              </Boton>
             </>
           ) : (
             <>

@@ -65,3 +65,8 @@ a {
 form {
   position: relative;
 }
+
+.titulo {
+  text-align: center;
+  margin-top: 5rem;
+}
