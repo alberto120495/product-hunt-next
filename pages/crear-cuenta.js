@@ -7,7 +7,7 @@ import {
   Error,
 } from "../components/ui/Formulario";
 import useValidacion from "../hooks/useValidacion";
-import validarCrearCuenta from "../hooks/helpers/validarCrearCuenta";
+import validarCrearCuenta from "../helpers/validarCrearCuenta";
 import { auth, createUserWithEmailAndPassword } from "../firebase/config";
 import { updateProfile } from "firebase/auth";
 import Router from "next/router";
