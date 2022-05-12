@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { es } from "date-fns/locale";
 import styled from "styled-components";
@@ -23,7 +24,9 @@ function DetallesProducto({ producto }) {
           <Imagen src={image} alt="" />
         </div>
         <div>
-          <Titulo>{nombre}</Titulo>
+          <Link href={`/productos/${id}`}>
+            <Titulo>{nombre}</Titulo>
+          </Link>
           <TextoDescripcion>{descripcion}</TextoDescripcion>
           <Comentarios>
             <div>
@@ -41,7 +44,7 @@ function DetallesProducto({ producto }) {
 
           <p>
             Publicado:{" "}
-            {formatDistanceToNow(new Date(creado.seconds * 1000), {
+            {formatDistanceToNow(new Date(creado), {
               locale: es,
             })}
           </p>

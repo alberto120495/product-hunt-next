@@ -75,3 +75,32 @@ form {
   margin-right: 2rem;
   border: none !important;
 }
+
+.error-title {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.titulo-producto {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.contenedor {
+  max-width: 1200px;
+  width: 95%;
+  padding: 5rem 0;
+  margin: 0 auto;
+}
+
+.comentario {
+  margin: 2rem 0;
+}
+
+.votos-container {
+  margin-top: 5rem;
+}
+
+.votos {
+  text-align: center;
+}
