@@ -1,9 +1,27 @@
+import Router from "next/router";
+import { useState } from "react";
 import styled from "styled-components";
-
 function Buscar() {
+  const [busqueda, setBusqueda] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (busqueda.trim() === "") return;
+
+    Router.push({
+      pathname: "/buscar",
+      query: { q: busqueda },
+    });
+  };
   return (
-    <form>
-      <InputText type="text" placeholder="Buscar Productos" />
+    <form onSubmit={handleSubmit}>
+      <InputText
+        type="text"
+        placeholder="Buscar Productos"
+        value={busqueda}
+        onChange={(e) => setBusqueda(e.target.value)}
+      />
       <InputSubmit type="submit">Buscar</InputSubmit>
     </form>
   );

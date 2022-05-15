@@ -38,7 +38,7 @@ function DetallesProducto({ producto }) {
                   height={16}
                 />
               </div>
-              <p>{comentarios.length} Comentarios</p>
+              <p>{comentarios?.length} Comentarios</p>
             </div>
           </Comentarios>
 
